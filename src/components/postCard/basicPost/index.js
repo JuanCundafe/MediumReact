@@ -2,10 +2,14 @@ import React from "react";
 
 import { Card } from "react-bootstrap";
 
+import "./basicPost.css";
+
 function basicPost({ Title, subtitle, author, new_Date, section, img_url }) {
   return (
     <Card className="card">
-      <Card.Img variant="top" className="img" src={img_url} />
+      <div className="container">
+        <Card.Img variant="top" className="img" src={img_url} />
+      </div>
       <Card.Body>
         <Card.Title>{Title}</Card.Title>
         <Card.Text>{subtitle}</Card.Text>

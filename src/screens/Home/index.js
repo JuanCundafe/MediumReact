@@ -29,10 +29,35 @@ function Home() {
         console.log(articles);
         if (parsedArticles) {
           setArticles(parsedArticles);
-          setfirstArticle(parsedArticles.slice(0, 1));
-          setmiddleArticles(parsedArticles.slice(1, 4));
-          setlastArticle(parsedArticles.slice(4, 5));
-          setgeneral1(parsedArticles.slice(5, 11));
+          setfirstArticle(
+            parsedArticles
+              .sort(function (currentItem, nextItem) {
+                return nextItem.milisegundos + currentItem.milisegundos;
+              })
+              .reverse()
+              .slice(0, 1)
+          );
+          setmiddleArticles(
+            parsedArticles
+              .sort(function (currentItem, nextItem) {
+                return nextItem.milisegundos + currentItem.milisegundos;
+              })
+              .slice(1, 4)
+          );
+          setlastArticle(
+            parsedArticles
+              .sort(function (currentItem, nextItem) {
+                return nextItem.milisegundos + currentItem.milisegundos;
+              })
+              .slice(4, 5)
+          );
+          setgeneral1(
+            parsedArticles
+              .sort(function (currentItem, nextItem) {
+                return nextItem.milisegundos + currentItem.milisegundos;
+              })
+              .slice(5, 11)
+          );
         }
       });
   }, []);
