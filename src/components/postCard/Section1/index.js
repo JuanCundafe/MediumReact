@@ -3,6 +3,8 @@ import React from "react";
 import { CardDeck } from "react-bootstrap";
 import BasicPost from "../basicPost";
 
+import "./Section1.css";
+
 function Section1({ array }) {
   return (
     <CardDeck>
@@ -15,6 +17,7 @@ function Section1({ array }) {
             section={section}
             new_Date={new_Date}
             img_url={img_url}
+            key={key}
           ></BasicPost>
         )
       )}

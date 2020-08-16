@@ -3,9 +3,9 @@ import React from "react";
 import { CardDeck } from "react-bootstrap";
 import BasicPost from "../basicPost";
 
-import "./Section2.css";
+import "./SectionPopular.css";
 
-function Section2({ array }) {
+function SectionPopular({ array }) {
   return (
     <CardDeck>
       {array.map(
@@ -25,4 +25,4 @@ function Section2({ array }) {
   );
 }
 
-export default Section2;
+export default SectionPopular;

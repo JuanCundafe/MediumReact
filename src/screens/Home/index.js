@@ -7,6 +7,7 @@ import Section2 from "../../components/postCard/Section2";
 import Section3 from "../../components/postCard/Section3";
 import Section4 from "../../components/postCard/Section4";
 import Section5 from "../../components/postCard/Section5";
+import SectionPopular from "../../components/postCard/SectionPopular";
 
 function Home() {
   const [articles, setArticles] = useState([]);
@@ -14,6 +15,7 @@ function Home() {
   const [middleArticles, setmiddleArticles] = useState([]);
   const [lastArticle, setlastArticle] = useState([]);
   const [general1, setgeneral1] = useState([]);
+  const [popular, setpopular] = useState([]);
 
   useEffect(() => {
     fetch("https://reactsessions-ac545.firebaseio.com/equipouno.json")
@@ -58,6 +60,7 @@ function Home() {
               })
               .slice(5, 11)
           );
+          setpopular(parsedArticles.slice(7, 11));
         }
       });
   }, []);
@@ -77,6 +80,9 @@ function Home() {
           </Col>
           <Col>
             <Section4 array={general1}></Section4>
+          </Col>
+          <Col>
+            <SectionPopular array={popular}></SectionPopular>
           </Col>
           <Col>
             <Section5 array={articles}></Section5>
