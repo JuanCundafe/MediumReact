@@ -16,6 +16,7 @@ function Home() {
   const [lastArticle, setlastArticle] = useState([]);
   const [general1, setgeneral1] = useState([]);
   const [popular, setpopular] = useState([]);
+  const [general2, setgeneral2] = useState([]);
 
   useEffect(() => {
     fetch("https://reactsessions-ac545.firebaseio.com/equipouno.json")
@@ -61,6 +62,7 @@ function Home() {
               .slice(5, 11)
           );
           setpopular(parsedArticles.slice(7, 11));
+          setgeneral2(parsedArticles);
         }
       });
   }, []);
@@ -85,7 +87,7 @@ function Home() {
             <SectionPopular array={popular}></SectionPopular>
           </Col>
           <Col>
-            <Section5 array={articles}></Section5>
+            <Section5 array={general2}></Section5>
           </Col>
         </Row>
       </Container>
