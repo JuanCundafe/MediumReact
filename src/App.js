@@ -8,7 +8,7 @@ import Momentum from "./screens/MomentumMedium/momentum";
 import NavBar from "./components/navBar";
 
 import Menu from "./components/Menu";
-
+import GetMedium from "./screens/Hooks";
 function App() {
   return (
     <Router>
@@ -28,6 +28,9 @@ function App() {
           <Route path="/momentum">
             <Menu mediumPath="momentum" />
             <Momentum />
+          </Route>
+          <Route path="/hooks">
+            <GetMedium />
           </Route>
         </Switch>
       </div>
