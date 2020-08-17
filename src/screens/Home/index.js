@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import "./home.css";
 import { Container, Col, Row } from "react-bootstrap";
 import Section1 from "../../components/postCard/Section1";
@@ -8,6 +10,7 @@ import Section3 from "../../components/postCard/Section3";
 import Section4 from "../../components/postCard/Section4";
 import Section5 from "../../components/postCard/Section5";
 import SectionPopular from "../../components/postCard/SectionPopular";
+import ArticleDetail from "../../components/ArticleDetail";
 
 function Home() {
   const [articles, setArticles] = useState([]);

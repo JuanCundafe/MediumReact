@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { Card } from "react-bootstrap";
 
 import "./basicPost.css";
 
-function basicPost({ Title, subtitle, author, new_Date, section, img_url }) {
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+function basicPost({
+  Title,
+  subtitle,
+  author,
+  new_Date,
+  section,
+  img_url,
+  key,
+}) {
   return (
-    <Card className="card">
+    <Card
+      onClick={() => setArticleActive(!articleActive)}
+      style={{ cursor: "pointer" }}
+    >
       <div className="container">
         <Card.Img variant="top" className="img" src={img_url} />
       </div>
