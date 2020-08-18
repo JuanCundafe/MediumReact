@@ -18,9 +18,7 @@ function Menu({ mediumPath }) {
             {mediumPath === "PopularMedium" ? (
               "Popular"
             ) : (
-              <Link to="/PopularMedium">
-                <a>POPULAR </a>
-              </Link>
+              <Link to="/PopularMedium">POPULAR</Link>
             )}
           </li>
 
@@ -28,40 +26,60 @@ function Menu({ mediumPath }) {
             {mediumPath === "momentum" ? (
               "Momentum"
             ) : (
-              <Link to="/momentum">
-                <a>MOMENTUM</a>
-              </Link>
+              <Link to="/momentum">MOMENTUM</Link>
             )}
           </li>
           <li>
-            <a>CORONAVIRUS</a>
+            {mediumPath === "coronavirus" ? (
+              "Coronavirus"
+            ) : (
+              <Link to="/coronavirus">CORONAVIRUS</Link>
+            )}
           </li>
           <li>
-            <a>ONEZERO</a>
+            {mediumPath === "onezero" ? (
+              "Onezero"
+            ) : (
+              <Link to="/onezero">ONEZERO</Link>
+            )}
           </li>
           <li>
-            <a>ELEMENTAL</a>
+            {mediumPath === "elemental" ? (
+              "Elemental"
+            ) : (
+              <Link to="/elemental">ELEMENTAL</Link>
+            )}
+          </li>
+          <li>{mediumPath === "gen" ? "Gen" : <Link to="/gen">GEN</Link>}</li>
+          <li>
+            {mediumPath === "zora" ? "Zora" : <Link to="/zora">ZORA</Link>}
           </li>
           <li>
-            <a>GEN</a>
+            {mediumPath === "forge" ? "Forge" : <Link to="/forge">FORGE</Link>}
           </li>
           <li>
-            <a>ZORA </a>
+            {mediumPath === "humanParts" ? (
+              "Human Parts"
+            ) : (
+              <Link to="/humanParts">HUMAN PARTS</Link>
+            )}
           </li>
           <li>
-            <a>FORGE</a>
+            {mediumPath === "marker" ? (
+              "Marker"
+            ) : (
+              <Link to="/marker">MARKER</Link>
+            )}
           </li>
           <li>
-            <a>HUMAN PARTS</a>
+            {mediumPath === "level" ? "Level" : <Link to="/level">LEVEL</Link>}
           </li>
           <li>
-            <a>MARKER</a>
-          </li>
-          <li>
-            <a>LEVEL</a>
-          </li>
-          <li>
-            <a>HEATED</a>
+            {mediumPath === "heated" ? (
+              "Heated"
+            ) : (
+              <Link to="/heated">HEATED</Link>
+            )}
           </li>
         </ul>
         <div
