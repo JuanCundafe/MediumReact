@@ -12,13 +12,19 @@ function Popular() {
   const [post, setPost] = useState({});
   const { Meta } = Card;
   useEffect(() => {
-    fetch(
-      "https://reactsessions-ac545.firebaseio.com/equipouno/-MEpsrQWYec93gEIxd66.json"
-    )
+    fetch("https://reactsessions-ac545.firebaseio.com/equipouno.json")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setPost(data);
+        let parsedUsers = [];
+        for (let key in data) {
+          let post = data[key];
+          post["key"] = key;
+          parsedUsers.push(post);
+        }
+        if (parsedUsers) {
+          setPost(parsedUsers);
+        }
       });
   }, []);
 

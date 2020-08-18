@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import "./PopularMedium.css";
 function GetPopular({
   title,
@@ -72,4 +72,4 @@ function GetPopular({
   );
 }
 
-export default GetPopular;
+export default GetPopular;*/

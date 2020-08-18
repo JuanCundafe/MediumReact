@@ -12,6 +12,7 @@ class NavBar extends Component {
               alt="medium"
             ></img>
           </div>
+
           <div className="barraNav d-flex align-items-center mt-3">
             <svg
               class="bi"

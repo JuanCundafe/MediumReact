@@ -6,12 +6,11 @@ import { Link } from "react-router-dom";
 function Menu({ mediumPath }) {
   return (
     <nav>
-      <div>
+      <div className="menu">
         {" "}
-        <div
-          class="mr-2 cursor-hand nav-control left"
-          onclick="scrollToLeft()"
-        ></div>
+        <div class="mr-2 cursor-hand nav-control left" onclick="scrollToLeft()">
+          {" "}
+        </div>
         <ul class="list-scroll horizontalContenedor mt-3">
           <li>{mediumPath === "home" ? "Home" : <Link to="/">HOME</Link>}</li>
           <li>

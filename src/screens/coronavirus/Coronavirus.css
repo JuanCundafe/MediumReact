@@ -1,0 +1,13 @@
+.carPopular {
+  max-width: 50%;
+  min-width: 50%;
+  margin-top: 40px;
+  margin-left: 80px;
+}
+.imageAutor {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  border-radius: 100%;
+}
