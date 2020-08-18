@@ -49,7 +49,9 @@ class NavBar extends Component {
               />
             </svg>
 
-            <button className="buttonNavBar mr-3">Upgrade</button>
+            <button href="" className="buttonNavBar mr-3">
+              Add new post
+            </button>
 
             <img
               class="imgIconMedium rounded-circle mt-0 "

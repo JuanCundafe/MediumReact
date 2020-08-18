@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Form, Button, Select } from "antd";
+import { Form, Button, Select, Row, Col } from "antd";
 import CustomInput from "../../components/CustomInput";
-
 //CSS
 import styles from "./Form.module.css";
 
@@ -23,7 +22,7 @@ function PostForm() {
   const [description, setDescription] = useState("");
   const [author, setAuthor] = useState("");
   const [content, setContent] = useState("");
-  // const [section, setSection] = useState("popular");
+  const [section, setSection] = useState("popular");
 
   //Default form functions
   const onFinishFailed = (errorInfo) => {
@@ -84,105 +83,126 @@ function PostForm() {
     setContent(value);
     console.log(value);
   };
-  // const onChangeSection = (name, value) => {
-  //   setSection(value);
-  //   console.log(value);
-  // };
+  const onChangeSection = (name, value) => {
+    setSection(value);
+    console.log(value);
+  };
 
   return (
-    <Form
-      {...layout}
-      name="basic"
-      initialValues={{ remember: true }}
-      onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
-      // onSubmit={handleSubmit}
-    >
-      <Form.Item label="imageUrl">
-        <CustomInput
-          placeholder="Image URL"
-          name="img_url"
-          value={img_url}
-          error="Debe ingresar la URL de una imagen"
-          callback={handleInputImage}
-        />
-      </Form.Item>
-
-      <Form.Item label="img_author">
-        <CustomInput
-          placeholder="Image URL"
-          name="img_author"
-          value={img_author}
-          error="Debe ingresar la URL de una imagen para mostrar como avatar del autor"
-          callback={handleInputImageAuthor}
-        />
-      </Form.Item>
-
-      <Form.Item label="title">
-        <CustomInput
-          placeholder="Title"
-          name="title"
-          value={title}
-          error="Debe ingresar el título del Post"
-          callback={handleInputTitle}
-        />
-      </Form.Item>
-
-      <Form.Item label="description">
-        <CustomInput
-          placeholder="Image URL"
-          name="description"
-          value={description}
-          error="Debe ingresar una breve descripción del post"
-          callback={handleInputDescription}
-        />
-      </Form.Item>
-
-      <Form.Item label="Author">
-        <CustomInput
-          placeholder="Author"
-          name="author"
-          value={author}
-          error="Debe ingresar el autor del post"
-          callback={handleInputAuthor}
-        />
-      </Form.Item>
-
-      <Form.Item label="content">
-        <CustomInput
-          placeholder="Post content"
-          name="content"
-          value={content}
-          error="Debe ingresar el texto del post"
-          callback={handleInputContent}
-        />
-      </Form.Item>
-      {/* 
-      <Form.Item name="section" label="section" rules={[{ required: false }]}>
-        <Select
-          placeholder="Please select the category of your post!"
-          onChange={onChangeSection}
-          allowClear
+    <Row className={styles.container}>
+      <Col className="form-column" xs={24} sm={24} md={24} lg={12}>
+        <Form
+          name="basic"
+          initialValues={{ remember: true }}
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+          // onSubmit={handleSubmit}
         >
-          <Option value="Momentum">Momentum</Option>
-          <Option value="Coronavirus">Coronavirus</Option>
-          <Option value="Gen">Gen</Option>
-          <Option value="Elemental">Elemental</Option>
-          <Option value="OneZero">OneZero</Option>
-          <Option value="Forge">Forge</Option>
-          <Option value="Human Parts">Human Parts</Option>
-          <Option value="Mind Cafe">Mind Cafe</Option>
-          <Option value="UX Collective">UX Collective</Option>
-          <Option value="The Journal Blog">The Journal Blog</Option>
-        </Select>
-      </Form.Item> */}
+          <Form.Item label="imageUrl">
+            <CustomInput
+              className={styles.item}
+              placeholder="Image URL"
+              name="img_url"
+              value={img_url}
+              error="Debe ingresar la URL de una imagen"
+              callback={handleInputImage}
+            />
+          </Form.Item>
 
-      <Form.Item {...tailLayout}>
-        <Button type="primary" htmlType="submit">
-          Submit Post
-        </Button>
-      </Form.Item>
-    </Form>
+          <Form.Item label="img_author">
+            <CustomInput
+              className={styles.item}
+              placeholder="Image URL"
+              name="img_author"
+              value={img_author}
+              error="Debe ingresar la URL de una imagen para mostrar como avatar del autor"
+              callback={handleInputImageAuthor}
+            />
+          </Form.Item>
+
+          <Form.Item label="title">
+            <CustomInput
+              className={styles.item}
+              placeholder="Title"
+              name="title"
+              value={title}
+              error="Debe ingresar el título del Post"
+              callback={handleInputTitle}
+            />
+          </Form.Item>
+
+          <Form.Item label="description">
+            <CustomInput
+              className={styles.item}
+              placeholder="Image URL"
+              name="description"
+              value={description}
+              error="Debe ingresar una breve descripción del post"
+              callback={handleInputDescription}
+            />
+          </Form.Item>
+
+          <Form.Item label="Author">
+            <CustomInput
+              className={styles.item}
+              placeholder="Author"
+              name="author"
+              value={author}
+              error="Debe ingresar el autor del post"
+              callback={handleInputAuthor}
+            />
+          </Form.Item>
+
+          <Form.Item label="content">
+            <CustomInput
+              className={styles.item}
+              placeholder="Post content"
+              name="content"
+              value={content}
+              error="Debe ingresar el texto del post"
+              callback={handleInputContent}
+            />
+          </Form.Item>
+
+          <Form.Item
+            name="section"
+            label="section"
+            rules={[{ required: false }]}
+          >
+            <Select
+              className={styles.itemSelector}
+              placeholder="Please select the category of your post!"
+              onChange={onChangeSection}
+              allowClear
+            >
+              <Option value="Momentum">Momentum</Option>
+              <Option value="Coronavirus">Coronavirus</Option>
+              <Option value="Gen">Gen</Option>
+              <Option value="Elemental">Elemental</Option>
+              <Option value="OneZero">OneZero</Option>
+              <Option value="Forge">Forge</Option>
+              <Option value="Human Parts">Human Parts</Option>
+              <Option value="Mind Cafe">Mind Cafe</Option>
+              <Option value="UX Collective">UX Collective</Option>
+              <Option value="The Journal Blog">The Journal Blog</Option>
+            </Select>
+          </Form.Item>
+
+          <Row xs={24} sm={24} md={24} lg={24}>
+            <Col className="bottonR" span={12} push={11}>
+              <Form.Item {...tailLayout}>
+                <Button type="primary" htmlType="submit">
+                  Submit Post
+                </Button>
+              </Form.Item>
+            </Col>
+          </Row>
+        </Form>
+      </Col>
+      <Col span={14} push={3} xs={0} sm={0} md={0} lg={12}>
+        <img className={styles.image} />
+      </Col>
+    </Row>
   );
 }
 
