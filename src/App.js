@@ -28,16 +28,19 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
+            <NavBar />
+            <Menu />
             <Home />
           </Route>
           <Route exact path="/Home">
+            <NavBar />
             <Home />
           </Route>
           <Route path="/popular">
             <Popular />
           </Route>
           <Route path="/momentum">
-            <h1>MOMENTUM</h1>
+            <Momentum />
           </Route>
           <Route path="/coronavirus">
             <h1>CORONAVIRUS</h1>
