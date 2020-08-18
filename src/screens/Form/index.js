@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button, Select } from "antd";
 import CustomInput from "../../components/CustomInput";
-import FormItem from "antd/lib/form/FormItem";
 
 //CSS
 import styles from "./Form.module.css";
@@ -18,25 +17,55 @@ const tailLayout = {
 
 function PostForm() {
   //States
-  const [imageUrl, setImageUrl] = useState("");
+  const [img_url, setImageUrl] = useState("");
+  const [img_author, setImageAuthor] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [author, setAuthor] = useState("");
   const [content, setContent] = useState("");
-  const [category, setCategory] = useState("popular");
+  // const [section, setSection] = useState("popular");
 
   //Default form functions
-  const onFinish = (values) => {
-    console.log("Success:", values);
-  };
-
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
+  };
+  const onFinish = (values) => {
+    console.log("Received values of form: ", values);
+    let date = new Date();
+    let milisegundos = date.getTime();
+    const months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dic",
+    ];
+    let new_Date = months[date.getMonth()] + " " + date.getDate();
+
+    values = { ...values, date, milisegundos, new_Date };
+    console.log("Received values of form with date: ", values);
+    fetch("https://reactsessions-ac545.firebaseio.com/equipouno.json", {
+      method: "POST",
+      mode: "cors",
+      body: JSON.stringify(values),
+    }).then((response) => console.log(response.json));
   };
 
   //Handlers
   const handleInputImage = (name, value) => {
     setImageUrl(value);
+    console.log(value);
+  };
+
+  const handleInputImageAuthor = (name, value) => {
+    setImageAuthor(value);
     console.log(value);
   };
   const handleInputTitle = (name, value) => {
@@ -55,31 +84,10 @@ function PostForm() {
     setContent(value);
     console.log(value);
   };
-  // const onChangeCategory = (name, value) => {
-  //   setCategory(value);
+  // const onChangeSection = (name, value) => {
+  //   setSection(value);
   //   console.log(value);
   // };
-
-  //Submit
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    let createdAt = new Date();
-    let post = {
-      imageUrl,
-      title,
-      description,
-      author,
-      createdAt,
-      content,
-      //category,
-    };
-    console.log(post);
-    fetch("https://reactsessions-ac545.firebaseio.com/equipouno.json", {
-      method: "POST",
-      mode: "cors",
-      body: JSON.stringify(post),
-    }).then((response) => console.log(response.json));
-  };
 
   return (
     <Form
@@ -88,15 +96,25 @@ function PostForm() {
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
-      onSubmit={handleSubmit}
+      // onSubmit={handleSubmit}
     >
       <Form.Item label="imageUrl">
         <CustomInput
           placeholder="Image URL"
-          name="imageUrl"
-          value={imageUrl}
+          name="img_url"
+          value={img_url}
           error="Debe ingresar la URL de una imagen"
           callback={handleInputImage}
+        />
+      </Form.Item>
+
+      <Form.Item label="img_author">
+        <CustomInput
+          placeholder="Image URL"
+          name="img_author"
+          value={img_author}
+          error="Debe ingresar la URL de una imagen para mostrar como avatar del autor"
+          callback={handleInputImageAuthor}
         />
       </Form.Item>
 
@@ -139,11 +157,11 @@ function PostForm() {
           callback={handleInputContent}
         />
       </Form.Item>
-
-      {/* <Form.Item name="category" label="category" rules={[{ required: true }]}>
+      {/* 
+      <Form.Item name="section" label="section" rules={[{ required: false }]}>
         <Select
           placeholder="Please select the category of your post!"
-          onChange={onChangeCategory}
+          onChange={onChangeSection}
           allowClear
         >
           <Option value="Momentum">Momentum</Option>
