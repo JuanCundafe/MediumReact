@@ -7,7 +7,7 @@ import PostForm from "./screens/Form";
 
 //RRD
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Popular from "./screens/PopularMedium";
+import Popular from "./screens/Popular";
 import Momentum from "./screens/MomentumMedium/momentum";
 import NavBar from "./components/navBar";
 import Coronavirus from "./screens/coronavirus";
@@ -19,24 +19,24 @@ import HumanParts from "./screens/humanParts";
 import Level from "./screens/level";
 import Marker from "./screens/marker";
 import Onezero from "./screens/onzero";
-import Zora from "./screens/zora";
 import Menu from "./components/Menu";
 
 function App() {
   return (
     <>
+      x
       <Router>
+        <NavBar />
+        <Menu />
         <Switch>
           <Route exact path="/">
-            <NavBar />
-            <Menu />
             <Home />
           </Route>
           <Route exact path="/Home">
-            <NavBar />
             <Home />
           </Route>
-          <Route path="/popular">
+          <Route path="/Popular">
+            <h1>POPULAR</h1>
             <Popular />
           </Route>
           <Route path="/momentum">
@@ -44,33 +44,36 @@ function App() {
           </Route>
           <Route path="/coronavirus">
             <h1>CORONAVIRUS</h1>
+            <Coronavirus />
           </Route>
           <Route path="/onezero">
             <h1>ONEZERO</h1>
+            <Onezero />
           </Route>
           <Route path="/elemental">
             <h1>ELEMENTAL</h1>
+            <Elemental />
           </Route>
           <Route path="/gen">
             <h1>GEN</h1>
+            <Gen />
           </Route>
-          <Route path="/zora">
-            <h1>ZORA</h1>
-          </Route>
+
           <Route path="/forge">
             <h1>FORGE</h1>
-          </Route>
-          <Route path="/human-parts">
-            <h1>HUMAN PARTS</h1>
+            <Forge />
           </Route>
           <Route path="/marker">
             <h1>MARKER</h1>
+            <Marker />
           </Route>
           <Route path="/level">
             <h1>LEVEL</h1>
+            <Level />
           </Route>
           <Route path="/heated">
             <h1>HEATED</h1>
+            <Heated />
           </Route>
           <Route path="/more">
             <h1>MORE</h1>
@@ -102,7 +105,7 @@ function App() {
             <Heated />
           </Route>
           <Route path="/humanParts">
-            <Menu mediumPath="humanParts" />
+            {/*<Menu mediumPath="humanParts" />*/}
             <HumanParts />
           </Route>
           <Route path="/level">
@@ -116,10 +119,6 @@ function App() {
           <Route path="/onezero">
             <Menu mediumPath="onezero" />
             <Onezero />
-          </Route>
-          <Route path="/zora">
-            <Menu mediumPath="zora" />
-            <Zora />
           </Route>
         </Switch>
       </Router>

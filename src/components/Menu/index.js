@@ -15,10 +15,10 @@ function Menu({ mediumPath }) {
         <ul class="list-scroll horizontalContenedor mt-3">
           <li>{mediumPath === "home" ? "Home" : <Link to="/">HOME</Link>}</li>
           <li>
-            {mediumPath === "PopularMedium" ? (
+            {mediumPath === "Popular" ? (
               "Popular"
             ) : (
-              <Link to="/PopularMedium">POPULAR</Link>
+              <Link to="/Popular">POPULAR</Link>
             )}
           </li>
 
@@ -51,9 +51,7 @@ function Menu({ mediumPath }) {
             )}
           </li>
           <li>{mediumPath === "gen" ? "Gen" : <Link to="/gen">GEN</Link>}</li>
-          <li>
-            {mediumPath === "zora" ? "Zora" : <Link to="/zora">ZORA</Link>}
-          </li>
+
           <li>
             {mediumPath === "forge" ? "Forge" : <Link to="/forge">FORGE</Link>}
           </li>

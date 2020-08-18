@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 class NavBar extends Component {
   render() {
@@ -49,9 +50,11 @@ class NavBar extends Component {
               />
             </svg>
 
-            <button href="" className="buttonNavBar mr-3">
-              Add new post
-            </button>
+            <Link to="/new_post">
+              <button type="submit" className="buttonNavBar mr-3">
+                Add new post
+              </button>
+            </Link>
 
             <img
               class="imgIconMedium rounded-circle mt-0 "

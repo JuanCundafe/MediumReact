@@ -13,7 +13,7 @@ function Popular() {
   const { Meta } = Card;
   useEffect(() => {
     fetch(
-      "https://reactsessions-ac545.firebaseio.com/equipouno/-MEpsrQWYec93gEIxd66.json"
+      "https://reactsessions-ac545.firebaseio.com/equipouno/-MF1fUfepyg7ifCxzqvZ.json"
     )
       .then((res) => res.json())
       .then((data) => {
