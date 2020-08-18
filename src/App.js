@@ -14,10 +14,10 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <PostForm />
+            <Home />
           </Route>
           <Route exact path="/Home">
-            <PostForm />
+            <Home />
           </Route>
           <Route path="/popular">
             <h1>POPULAR</h1>
