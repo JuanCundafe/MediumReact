@@ -1,11 +1,6 @@
 import React from "react";
-import Form from "./screens/Form";
 function App() {
-  return (
-    <div>
-      <Form />
-    </div>
-  );
+  return <div></div>;
 }
 
 export default App;
