@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import "./home.css";
-import { Container, Col, Row } from "react-bootstrap";
+import { Col, Row } from "antd";
 import Section1 from "../../components/postCard/Section1";
 import Section2 from "../../components/postCard/Section2";
 import Section3 from "../../components/postCard/Section3";
@@ -68,30 +68,30 @@ function Home() {
   }, []);
 
   return (
-    <div className="Container">
-      <Container>
-        <Row className="Row2">
+    <>
+      <div className="site-card-wrapper">
+        <Row gutter={16}>
           <Col>
             <Section1 array={firstArticle}></Section1>
           </Col>
-          <Col>
-            <Section2 array={middleArticles}></Section2>
-          </Col>
-          <Col>
-            <Section3 array={lastArticle}></Section3>
-          </Col>
-          <Col>
-            <Section4 array={general1}></Section4>
-          </Col>
-          <Col>
-            <SectionPopular array={popular}></SectionPopular>
-          </Col>
-          <Col>
-            <Section5 array={general2}></Section5>
-          </Col>
         </Row>
-      </Container>
-    </div>
+        <Col>
+          <Section2 array={middleArticles}></Section2>
+        </Col>
+        <Col>
+          <Section3 array={lastArticle}></Section3>
+        </Col>
+        <Col>
+          <Section4 array={general1}></Section4>
+        </Col>
+        <Col>
+          <SectionPopular array={popular}></SectionPopular>
+        </Col>
+        <Col>
+          <Section5 array={general2}></Section5>
+        </Col>
+      </div>
+    </>
   );
 }
 
