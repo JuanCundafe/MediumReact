@@ -6,7 +6,7 @@ import {
   SettingOutlined,
 } from "@ant-design/icons";
 
-function Momentum() {
+function Coronavirus() {
   const [post, setPost] = useState({});
   const { Meta } = Card;
   useEffect(() => {
@@ -46,4 +46,4 @@ function Momentum() {
   );
 }
 
-export default Momentum;
+export default Coronavirus;
