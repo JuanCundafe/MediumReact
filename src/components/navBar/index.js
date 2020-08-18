@@ -9,6 +9,7 @@ class NavBar extends Component {
             <img
               className="imgLogoMedium"
               src="https://miro.medium.com/max/1090/1*TGH72Nnw24QL3iV9IOm4VA.png"
+              alt="medium"
             ></img>
           </div>
           <div className="barraNav d-flex align-items-center mt-3">

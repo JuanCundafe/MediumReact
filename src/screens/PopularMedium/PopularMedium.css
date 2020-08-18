@@ -25,3 +25,7 @@
 .imgPopularInfinito {
   object-fit: cover;
 }
+.imageAutor {
+  border-radius: 100%;
+  margin-left: 20%;
+}
