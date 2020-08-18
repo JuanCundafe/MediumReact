@@ -1,9 +1,9 @@
 import React from "react";
-import Form from "./screens/Form";
+import Detail from "./screens/Detail";
 function App() {
   return (
     <div>
-      <Form />
+      <Detail />
     </div>
   );
 }
