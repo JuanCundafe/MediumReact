@@ -24,7 +24,7 @@ import Menu from "./components/Menu";
 function App() {
   return (
     <>
-      x
+
       <Router>
         <NavBar />
         <Menu />

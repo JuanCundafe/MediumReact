@@ -1,18 +1,9 @@
 import React, { useState } from "react";
-import { Form, Button, Select, Row, Col } from "antd";
-import CustomInput from "../../components/CustomInput";
+import woman from "../../components/navBar/images/medium_FORM.jpeg"
 //CSS
-import styles from "./Form.module.css";
 
-const { Option } = Select;
 
-const layout = {
-  labelCol: { span: 8 },
-  wrapperCol: { span: 16 },
-};
-const tailLayout = {
-  wrapperCol: { offset: 8, span: 16 },
-};
+
 
 function PostForm() {
   //States
@@ -55,154 +46,107 @@ function PostForm() {
       mode: "cors",
       body: JSON.stringify(values),
     }).then((response) => console.log(response.json));
+    setAuthor("")
+    setContent("")
+    setDescription("")
+    setImageUrl("")
+    setSection("")
+    setTitle("")
+
+
   };
 
   //Handlers
-  const handleInputImage = (name, value) => {
+  const handleInputImage = ({ target: { name, value } }) => {
     setImageUrl(value);
     console.log(value);
   };
 
-  const handleInputImageAuthor = (name, value) => {
+  const handleInputImageAuthor = ({ target: { name, value } }) => {
     setImageAuthor(value);
     console.log(value);
   };
-  const handleInputTitle = (name, value) => {
+  const handleInputTitle = ({ target: { name, value } }) => {
     setTitle(value);
     console.log(value);
   };
-  const handleInputDescription = (name, value) => {
+  const handleInputDescription = ({ target: { name, value } }) => {
     setDescription(value);
     console.log(value);
   };
-  const handleInputAuthor = (name, value) => {
+  const handleInputAuthor = ({ target: { name, value } }) => {
     setAuthor(value);
     console.log(value);
   };
-  const handleInputContent = (name, value) => {
+  const handleInputContent = ({ target: { name, value } }) => {
     setContent(value);
     console.log(value);
   };
-  const onChangeSection = (name, value) => {
+  const onChangeSection = ({ target: { name, value } }) => {
     setSection(value);
     console.log(value);
   };
+  const handleOnSubmit = (event) => {
+    event.preventDefault()
+    let objectPost = { img_url, title, description, author, section, content, img_author }
+    onFinish(objectPost)
+  }
 
   return (
-    <Row className={styles.container}>
-      <Col className="form-column" xs={24} sm={24} md={24} lg={12}>
-        <Form
-          name="basic"
-          initialValues={{ remember: true }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-          // onSubmit={handleSubmit}
-        >
-          <Form.Item label="imageUrl">
-            <CustomInput
-              className={styles.item}
-              placeholder="Image URL"
-              name="img_url"
-              value={img_url}
-              error="Debe ingresar la URL de una imagen"
-              callback={handleInputImage}
-            />
-          </Form.Item>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <form id="newPostForm" class="mt-5" onSubmit={handleOnSubmit}>
+            <div class="form-group">
+              <label for="">URL Image</label>
+              <input type="url" class="form-control" id="imageurl" name="imageurl" onChange={handleInputImage} value={img_url} />
+            </div>
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" id="title" name="title" onChange={handleInputTitle} value={title} />
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <input type="text" class="form-control" id="description" name="description" onChange={handleInputDescription} value={description} />
+            </div>
+            <div class="form-group">
+              <label for="author">Author</label>
+              <input type="text" class="form-control" id="author" name="author" onChange={handleInputAuthor} value={author} />
+            </div>
+            <div class="form-group">
+              <label for="category">Category</label>
+              <select class="form-control" id="category" name="category" onChange={onChangeSection} value={section}>
+                <option value="">Choose One</option>
+                <option>Momentum</option>
+                <option>Coronavirus</option>
+                <option>Gen</option>
+                <option>Elemental</option>
+                <option>OneZero</option>
+                <option>Forge</option>
+                <option>Human Parts</option>
+                <option>Mind Cafe</option>
+                <option>UX Collective</option>
+                <option>The Journal Blog</option>
 
-          <Form.Item label="img_author">
-            <CustomInput
-              className={styles.item}
-              placeholder="Image URL"
-              name="img_author"
-              value={img_author}
-              error="Debe ingresar la URL de una imagen para mostrar como avatar del autor"
-              callback={handleInputImageAuthor}
-            />
-          </Form.Item>
 
-          <Form.Item label="title">
-            <CustomInput
-              className={styles.item}
-              placeholder="Title"
-              name="title"
-              value={title}
-              error="Debe ingresar el título del Post"
-              callback={handleInputTitle}
-            />
-          </Form.Item>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="content">Content</label>
+              <textarea type="text" class="form-control" rows="6" id="content" name="content" onChange={handleInputContent} value={content}></textarea>
+            </div>
+            <button type="submit" class="btn btn-info" id="buttonS">
+              Submit Post
+          </button>
+          </form>
+        </div>
+        <div class="col-12 d-flex align-items-center col-md-6">
+          <img src={woman} class="img-fluid" alt="" />
+        </div>
+      </div>
 
-          <Form.Item label="description">
-            <CustomInput
-              className={styles.item}
-              placeholder="Image URL"
-              name="description"
-              value={description}
-              error="Debe ingresar una breve descripción del post"
-              callback={handleInputDescription}
-            />
-          </Form.Item>
+    </div>
 
-          <Form.Item label="Author">
-            <CustomInput
-              className={styles.item}
-              placeholder="Author"
-              name="author"
-              value={author}
-              error="Debe ingresar el autor del post"
-              callback={handleInputAuthor}
-            />
-          </Form.Item>
-
-          <Form.Item label="content">
-            <CustomInput
-              className={styles.item}
-              placeholder="Post content"
-              name="content"
-              value={content}
-              error="Debe ingresar el texto del post"
-              callback={handleInputContent}
-            />
-          </Form.Item>
-
-          <Form.Item
-            name="section"
-            label="section"
-            rules={[{ required: false }]}
-          >
-            <Select
-              className={styles.itemSelector}
-              placeholder="Please select the category of your post!"
-              onChange={onChangeSection}
-              allowClear
-            >
-              <Option value="Momentum">Momentum</Option>
-              <Option value="Coronavirus">Coronavirus</Option>
-              <Option value="Gen">Gen</Option>
-              <Option value="Elemental">Elemental</Option>
-              <Option value="OneZero">OneZero</Option>
-              <Option value="Forge">Forge</Option>
-              <Option value="Human Parts">Human Parts</Option>
-              <Option value="Mind Cafe">Mind Cafe</Option>
-              <Option value="UX Collective">UX Collective</Option>
-              <Option value="The Journal Blog">The Journal Blog</Option>
-            </Select>
-          </Form.Item>
-
-          <Row xs={24} sm={24} md={24} lg={24}>
-            <Col className="bottonR" span={12} push={11}>
-              <Form.Item {...tailLayout}>
-                <Button type="primary" htmlType="submit">
-                  Submit Post
-                </Button>
-              </Form.Item>
-            </Col>
-          </Row>
-        </Form>
-      </Col>
-      <Col span={14} push={3} xs={0} sm={0} md={0} lg={12}>
-        <img className={styles.image} />
-      </Col>
-    </Row>
   );
 }
 

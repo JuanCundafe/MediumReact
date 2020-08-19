@@ -7,25 +7,25 @@ import "./SectionPopular.css";
 
 function SectionPopular({ array }) {
   return (
-    <div className="site-card-wrapper">
-      <Row gutter={16}>
-        <Col span={8}>
-          {array.map(
-            ({ Title, subtitle, author, section, new_Date, img_url, key }) => (
-              <BasicPost
-                Title={Title}
-                subtitle={subtitle}
-                author={author}
-                section={section}
-                new_Date={new_Date}
-                img_url={img_url}
-                key={key}
-              ></BasicPost>
-            )
-          )}
-        </Col>
-      </Row>
-    </div>
+
+    <Row gutter={16}>
+      <Col span={8}>
+        {array.map(
+          ({ Title, subtitle, author, section, new_Date, img_url, key }) => (
+            <BasicPost
+              Title={Title}
+              subtitle={subtitle}
+              author={author}
+              section={section}
+              new_Date={new_Date}
+              img_url={img_url}
+              key={key}
+            ></BasicPost>
+          )
+        )}
+      </Col>
+    </Row>
+
   );
 }
 

@@ -1,31 +1,26 @@
 import React from "react";
-
-import { Col, Row } from "antd";
-import BasicPost from "../basicPost";
-
 import "./Section2.css";
+import BasicPost3 from "../basicPost3";
 
 function Section2({ array }) {
   return (
-    <div className="site-card-wrapper">
-      <Row gutter={16}>
-        <Col span={8}>
-          {array.map(
-            ({ Title, subtitle, author, section, new_Date, img_url, key }) => (
-              <BasicPost
-                Title={Title}
-                subtitle={subtitle}
-                author={author}
-                section={section}
-                new_Date={new_Date}
-                img_url={img_url}
-                key={key}
-              ></BasicPost>
-            )
-          )}
-        </Col>
-      </Row>
+    <div>
+
+      {array.map(
+        ({ Title, subtitle, author, section, new_Date, img_url, key }) => (
+          <BasicPost3
+            Title={Title}
+            subtitle={subtitle}
+            author={author}
+            section={section}
+            new_Date={new_Date}
+            img_url={img_url}
+            key={key}
+          ></BasicPost3>
+        )
+      )}
     </div>
+
   );
 }
 

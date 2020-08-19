@@ -66,30 +66,28 @@ function Home() {
         }
       });
   }, []);
-
+  console.log(articles)
   return (
     <>
-      <div className="site-card-wrapper">
-        <Row gutter={16}>
-          <Col>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-4">
             <Section1 array={firstArticle}></Section1>
-          </Col>
-        </Row>
-        <Col>
-          <Section2 array={middleArticles}></Section2>
-        </Col>
-        <Col>
-          <Section3 array={lastArticle}></Section3>
-        </Col>
-        <Col>
-          <Section4 array={general1}></Section4>
-        </Col>
-        <Col>
-          <SectionPopular array={popular}></SectionPopular>
-        </Col>
-        <Col>
-          <Section5 array={general2}></Section5>
-        </Col>
+          </div>
+          <div class="col-12 col-md-4">
+            <Section2 array={middleArticles}></Section2>
+          </div>
+          <div class="col-12 col-md-4">
+            <Section3 array={lastArticle}></Section3>
+          </div>
+        </div>
+
+
+        <Section4 array={general1}></Section4>
+
+        <SectionPopular array={popular}></SectionPopular>
+
+        <Section5 array={general2}></Section5>
       </div>
     </>
   );

@@ -28,3 +28,21 @@
   height: 41px;
   width: auto;
 }
+.icons{
+  width: 24px;
+  margin-right: 12px;
+}
+.photo{
+  width: 35px;
+}
+#upbtn{
+  border: 1px solid rgb(122, 122, 122);
+  font-size: 12px;
+  padding: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: 10px;
+}
+#upbtn:hover{
+  border: 1px solid black;
+}

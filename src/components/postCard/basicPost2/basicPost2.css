@@ -1,0 +1,21 @@
+.img {
+    width: 200px;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  .card {
+    border-radius: 20px;
+    border-color: black;
+  }
+  
+  .imageess {
+    position: relative;
+    height: 150px;
+    margin: 12px;
+    width: 100%;
+    right: 20px;
+    margin-top: 0;
+    -o-object-fit: fill;
+    object-fit: fill;
+  }
