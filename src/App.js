@@ -36,48 +36,37 @@ function App() {
             <Home />
           </Route>
           <Route path="/Popular">
-            <h1>POPULAR</h1>
             <Popular />
           </Route>
           <Route path="/momentum">
             <Momentum />
           </Route>
           <Route path="/coronavirus">
-            <h1>CORONAVIRUS</h1>
             <Coronavirus />
           </Route>
           <Route path="/onezero">
-            <h1>ONEZERO</h1>
             <Onezero />
           </Route>
           <Route path="/elemental">
-            <h1>ELEMENTAL</h1>
             <Elemental />
           </Route>
           <Route path="/gen">
-            <h1>GEN</h1>
             <Gen />
           </Route>
 
           <Route path="/forge">
-            <h1>FORGE</h1>
             <Forge />
           </Route>
           <Route path="/marker">
-            <h1>MARKER</h1>
             <Marker />
           </Route>
           <Route path="/level">
-            <h1>LEVEL</h1>
             <Level />
           </Route>
           <Route path="/heated">
-            <h1>HEATED</h1>
             <Heated />
           </Route>
-          <Route path="/more">
-            <h1>MORE</h1>
-          </Route>
+          <Route path="/more"></Route>
           <Route path="/new_post">
             <PostForm />
           </Route>
