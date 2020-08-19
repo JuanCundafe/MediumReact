@@ -2,10 +2,11 @@ import React from "react";
 
 import { Col, Row } from "antd";
 import BasicPost from "../basicPost";
+import { Link, useRouteMatch } from "react-router-dom";
 
 import "./Section1.css";
-
 function Section1({ array }) {
+  const { url } = useRouteMatch();
   return (
     <div className="site-card-wrapper">
       <Row gutter={16}>

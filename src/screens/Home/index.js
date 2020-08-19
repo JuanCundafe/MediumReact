@@ -9,6 +9,8 @@ import Section4 from "../../components/postCard/Section4";
 import Section5 from "../../components/postCard/Section5";
 import SectionPopular from "../../components/postCard/SectionPopular";
 
+import { Link, useRouteMatch } from "react-router-dom";
+
 function Home() {
   const [articles, setArticles] = useState([]);
   const [firstArticle, setfirstArticle] = useState([]);

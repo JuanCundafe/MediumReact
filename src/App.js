@@ -60,8 +60,8 @@ function App() {
           <Route path="/forge">
             <h1>FORGE</h1>
           </Route>
-          <Route path="/human-parts">
-            <h1>HUMAN PARTS</h1>
+          <Route path="/Detail">
+            <Detail />
           </Route>
           <Route path="/marker">
             <h1>MARKER</h1>
@@ -73,12 +73,12 @@ function App() {
             <h1>HEATED</h1>
           </Route>
           <Route path="/more">
-            <h1>MORE</h1>
+            <Detail />
           </Route>
           <Route path="/new_post">
             <PostForm />
           </Route>
-          <Route path="/blog/:id">
+          <Route path="/Detail/:id">
             <Detail />
           </Route>
           <Route path="/coronavirus">

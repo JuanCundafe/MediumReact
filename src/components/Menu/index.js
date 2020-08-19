@@ -61,7 +61,7 @@ function Menu({ mediumPath }) {
             {mediumPath === "humanParts" ? (
               "Human Parts"
             ) : (
-              <Link to="/humanParts">HUMAN PARTS</Link>
+              <Link to="/Detail">Detail</Link>
             )}
           </li>
           <li>
